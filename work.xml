@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!-- This file is part project_employee module for Tryton.
+The COPYRIGHT file at the top level of this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="res.group" id="group_project_employee">
+            <field name="name">Project Employee Administration</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_project_employee">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_project_employee"/>
+        </record>
+
+        <record model="ir.ui.view" id="work_view_form">
+            <field name="model">project.work</field>
+            <field name="inherit" ref="project.work_view_form"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath expr="/form/notebook/page[@id=&quot;timesheet_lines&quot;]"
+                           position="after">
+                        <page string="Employees" id="employee">
+                            <label name="employee"/>
+                            <field name="employee"/>
+                            <field name="employees" colspan="4"/>
+                        </page>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="work_view_tree">
+            <field name="model">project.work</field>
+            <field name="inherit" ref="project.work_view_tree"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath expr="/tree/field[@name='total_effort']" position="after">
+                        <field name="employee"/>
+                        <field name="employees" tree_invisible="1"/>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="work_view_list">
+            <field name="model">project.work</field>
+            <field name="inherit" ref="project.work_view_list"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath expr="/tree/field[@name='total_effort']" position="after">
+                        <field name="employee"/>
+                        <field name="employees" tree_invisible="1"/>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="work_view_list2">
+            <field name="model">project.work</field>
+            <field name="inherit" ref="project.work_view_list2"/>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath expr="/tree/field[@name='total_effort']" position="after">
+                        <field name="employee"/>
+                        <field name="employees" tree_invisible="1"/>
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+
+        <!-- Access -->
+        <record model="ir.model.access" id="access_project_work_company_employee">
+            <field name="model" search="[('model', '=', 'project.work-company.employee')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_project_work_company_employee_admin">
+            <field name="model" search="[('model', '=', 'project.work-company.employee')]"/>
+            <field name="group" ref="group_project_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+    </data>
+</tryton>

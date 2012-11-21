@@ -1,0 +1,55 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:project.work,employee:"
+msgid "Current Employee"
+msgstr "Empleado"
+
+msgctxt "field:project.work,employees:"
+msgid "Employees"
+msgstr "Empleados"
+
+msgctxt "field:project.work-company.employee,create_date:"
+msgid "Create Date"
+msgstr "Fecha creación"
+
+msgctxt "field:project.work-company.employee,create_uid:"
+msgid "Create User"
+msgstr "Usuario creación"
+
+msgctxt "field:project.work-company.employee,employee:"
+msgid "Employee"
+msgstr "Empleado"
+
+msgctxt "field:project.work-company.employee,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:project.work-company.employee,rec_name:"
+msgid "Name"
+msgstr "Nombre"
+
+msgctxt "field:project.work-company.employee,work:"
+msgid "Work"
+msgstr "Trabajo"
+
+msgctxt "field:project.work-company.employee,write_date:"
+msgid "Write Date"
+msgstr "Fecha modificación"
+
+msgctxt "field:project.work-company.employee,write_uid:"
+msgid "Write User"
+msgstr "Usuario modificación"
+
+msgctxt "model:project.work-company.employee,name:"
+msgid "Project Work - Employee"
+msgstr "Trabajo - Empleado"
+
+msgctxt "model:res.group,name:group_project_employee"
+msgid "Project Employee Administration"
+msgstr "Administrador de proyectos y empleados"
+
+msgctxt "view:project.work:"
+msgid "Employees"
+msgstr "Empleados"
