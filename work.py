@@ -29,4 +29,4 @@ class ProjectWork:
             ('company', '=', Eval('company')),
             ('id', 'in', Eval('employees', [])),
             ],
-        depends=['employees'])
+        depends=['employees', 'company'])
