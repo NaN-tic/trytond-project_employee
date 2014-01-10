@@ -40,7 +40,7 @@ setup(name='trytonzz_project_employee',
         ],
     package_data={
         'trytond.modules.project_employee': info.get('xml', []) \
-            + ['tryton.cfg', 'locale/*.po'],
+            + ['tryton.cfg', 'view/*.xml', 'locale/*.po'],
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',

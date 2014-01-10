@@ -14,63 +14,23 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.ui.view" id="work_view_form">
             <field name="model">project.work</field>
             <field name="inherit" ref="project.work_view_form"/>
-            <field name="arch" type="xml">
-                <![CDATA[
-                <data>
-                    <xpath expr="/form/notebook/page[@id=&quot;children&quot;]"
-                           position="after">
-                        <page string="Employees" id="employee">
-                            <label name="employee"/>
-                            <field name="employee"/>
-                            <field name="employees" colspan="4"/>
-                        </page>
-                    </xpath>
-                </data>
-                ]]>
-            </field>
+            <field name="name">work_form</field>
         </record>
 
         <record model="ir.ui.view" id="work_view_tree">
             <field name="model">project.work</field>
             <field name="inherit" ref="project.work_view_tree"/>
-            <field name="arch" type="xml">
-                <![CDATA[
-                <data>
-                    <xpath expr="/tree/field[@name='total_effort']" position="after">
-                        <field name="employee"/>
-                        <field name="employees" tree_invisible="1"/>
-                    </xpath>
-                </data>
-                ]]>
-            </field>
+            <field name="name">work_tree</field>
         </record>
         <record model="ir.ui.view" id="work_view_list">
             <field name="model">project.work</field>
             <field name="inherit" ref="project.work_view_list"/>
-            <field name="arch" type="xml">
-                <![CDATA[
-                <data>
-                    <xpath expr="/tree/field[@name='total_effort']" position="after">
-                        <field name="employee"/>
-                        <field name="employees" tree_invisible="1"/>
-                    </xpath>
-                </data>
-                ]]>
-            </field>
+            <field name="name">work_list</field>
         </record>
         <record model="ir.ui.view" id="work_view_list2">
             <field name="model">project.work</field>
             <field name="inherit" ref="project.work_view_list2"/>
-            <field name="arch" type="xml">
-                <![CDATA[
-                <data>
-                    <xpath expr="/tree/field[@name='total_effort']" position="after">
-                        <field name="employee"/>
-                        <field name="employees" tree_invisible="1"/>
-                    </xpath>
-                </data>
-                ]]>
-            </field>
+            <field name="name">work_list2</field>
         </record>
 
         <!-- Access -->
