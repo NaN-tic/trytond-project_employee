@@ -33,6 +33,46 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="name">work_list2</field>
         </record>
 
+        <record model="ir.action.act_window" id="act_project_employee_tree">
+            <field name="name">My projects</field>
+            <field name="res_model">project.work</field>
+            <field name="domain">[('type', '=', 'project'), ('employee.id', '=', Eval('context', {}).get('employee', -1))]</field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_project_employee_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="project.work_view_tree"/>
+            <field name="act_window" ref="act_project_employee_tree"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_project_employee_tree_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="project.work_view_form"/>
+            <field name="act_window" ref="act_project_employee_tree"/>
+        </record>
+        <menuitem parent="project.menu_project_form" action="act_project_employee_tree"
+            id="menu_project_employee_tree"/>
+
+        <record model="ir.action.act_window" id="act_task_employee_tree">
+            <field name="name">My tasks</field>
+            <field name="res_model">project.work</field>
+            <field name="domain">[('type', '=', 'task'), ('employee.id', '=', Eval('context', {}).get('employee', -1))]</field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_task_employee_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="project.work_view_list2"/>
+            <field name="act_window" ref="act_task_employee_tree"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_task_employee_tree_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="project.work_view_form"/>
+            <field name="act_window" ref="act_task_employee_tree"/>
+        </record>
+        <menuitem parent="project.menu_task_form" action="act_task_employee_tree"
+            id="menu_task_employee_tree"/>
+
         <!-- Access -->
         <record model="ir.model.access" id="access_project_work_company_employee">
             <field name="model" search="[('model', '=', 'project.work-company.employee')]"/>
