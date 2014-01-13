@@ -42,6 +42,22 @@ msgctxt "field:project.work-company.employee,write_uid:"
 msgid "Write User"
 msgstr "Usuari modificació"
 
+msgctxt "model:ir.action,name:act_project_employee_tree"
+msgid "My projects"
+msgstr "Meus projectes"
+
+msgctxt "model:ir.action,name:act_task_employee_tree"
+msgid "My tasks"
+msgstr "Meves tasques"
+
+msgctxt "model:ir.ui.menu,name:menu_project_employee_tree"
+msgid "My projects"
+msgstr "Meus projectes"
+
+msgctxt "model:ir.ui.menu,name:menu_task_employee_tree"
+msgid "My tasks"
+msgstr "Meves tasques"
+
 msgctxt "model:project.work-company.employee,name:"
 msgid "Project Work - Employee"
 msgstr "Treball - Empleat"
