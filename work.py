@@ -5,11 +5,11 @@ from trytond.model import ModelSQL, fields
 from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 
-__all__ = ['ProjectWork', 'ProjectWorkEmployee']
+__all__ = ['Work', 'WorkEmployee']
 __metaclass__ = PoolMeta
 
 
-class ProjectWorkEmployee(ModelSQL):
+class WorkEmployee(ModelSQL):
     'Project Work - Employee'
     __name__ = 'project.work-company.employee'
     _table = 'project_work_company_employee_rel'
@@ -19,8 +19,7 @@ class ProjectWorkEmployee(ModelSQL):
         ondelete='CASCADE', select=True, required=True)
 
 
-class ProjectWork:
-    'Work Effort'
+class Work:
     __name__ = 'project.work'
     employees = fields.Many2Many('project.work-company.employee', 'work',
         'employee', 'Employees')
