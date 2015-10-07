@@ -27,10 +27,10 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
             <field name="inherit" ref="project.work_view_list"/>
             <field name="name">work_list</field>
         </record>
-        <record model="ir.ui.view" id="work_view_list2">
+        <record model="ir.ui.view" id="work_view_list_simple">
             <field name="model">project.work</field>
-            <field name="inherit" ref="project.work_view_list2"/>
-            <field name="name">work_list2</field>
+            <field name="inherit" ref="project.work_view_list_simple"/>
+            <field name="name">work_list_simple</field>
         </record>
 
         <record model="ir.action.act_window" id="act_project_employee_tree">
@@ -65,7 +65,7 @@ The COPYRIGHT file at the top level of this repository contains the full copyrig
         <record model="ir.action.act_window.view"
             id="act_task_employee_tree_view1">
             <field name="sequence" eval="10"/>
-            <field name="view" ref="project.work_view_list2"/>
+            <field name="view" ref="project.work_view_list_simple"/>
             <field name="act_window" ref="act_task_employee_tree"/>
         </record>
         <record model="ir.action.act_window.view"
