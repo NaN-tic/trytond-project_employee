@@ -6,7 +6,6 @@ from trytond.pool import PoolMeta
 from trytond.pyson import Eval
 
 __all__ = ['Work', 'WorkEmployee']
-__metaclass__ = PoolMeta
 
 
 class WorkEmployee(ModelSQL):
@@ -20,6 +19,7 @@ class WorkEmployee(ModelSQL):
 
 
 class Work:
+    __metaclass__ = PoolMeta
     __name__ = 'project.work'
     employees = fields.Many2Many('project.work-company.employee', 'work',
         'employee', 'Employees')
