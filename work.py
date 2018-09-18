@@ -18,8 +18,7 @@ class WorkEmployee(ModelSQL):
         ondelete='CASCADE', select=True, required=True)
 
 
-class Work:
-    __metaclass__ = PoolMeta
+class Work(metaclass=PoolMeta):
     __name__ = 'project.work'
     employees = fields.Many2Many('project.work-company.employee', 'work',
         'employee', 'Employees')
